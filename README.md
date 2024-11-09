@@ -1,10 +1,12 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Getting started
 
-In the project directory, you can run:
+### `Clone the docker image from the docker hub.`\
+docker pull jsr47/lseg-chat-bot-backend:latest
+
+### `To run the docker container.`/
+docker run -d -p 8080:8080 jsr47/lseg-chat-bot-backend:latest
 
 ### `npm start`
 
