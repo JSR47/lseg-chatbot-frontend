@@ -1,0 +1,15 @@
+.dark-navbar {
+    background-color: #33b2ff; /* Dark blue */
+  }
+  
+  .dark-navbar .navbar-brand {
+    color: #ffffff; /* White text */
+  }
+
+  .light-navbar {
+    background-color: #a1a8ac; /* Dark blue */
+  }
+  
+  .light-navbar .navbar-brand {
+    color: #292828; /* White text */
+  }
