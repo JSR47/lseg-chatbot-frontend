@@ -8,6 +8,9 @@ docker pull jsr47/lseg-chat-bot-frontend:latest
 ### `To run the docker container.`/
 docker run -d -p 3000:80 jsr47/lseg-chat-bot-frontend:latest
 
+### `To run the application.`/
+After starting the backend and the frontend go to the web browser and type "http://localhost:3000/"
+
 ### `npm start`
 
 Runs the app in the development mode.\
