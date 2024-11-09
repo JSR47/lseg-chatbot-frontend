@@ -1,32 +1,14 @@
-# Build Stage
-FROM node:18 as build-stage
-
+#Stage 1
+FROM node:18.20-alpine as builder
 WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
+COPY package*.json .  
+RUN npm install      
 COPY . .
-
 RUN npm run build
 
-FROM nginx:latest
-
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
-COPY --from=build-stage /app/build/ /usr/share/nginx/html
-
-WORKDIR /app
-RUN chown -R nginx:nginx /app && chmod -R 755 /app && \
-        chown -R nginx:nginx /var/cache/nginx && \
-        chown -R nginx:nginx /var/log/nginx && \
-        chown -R nginx:nginx /etc/nginx/conf.d
-RUN touch /var/run/nginx.pid && \
-        chown -R nginx:nginx /var/run/nginx.pid
-
-USER nginx
-
-EXPOSE 3000
-
-CMD ["nginx", "-g", "daemon off;"]
+# Stage 2
+FROM nginx:1.19.0
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=builder /app/build .
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

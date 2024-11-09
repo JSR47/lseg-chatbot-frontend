@@ -7,7 +7,7 @@ export const SelectedTopStock = ({ stockPrice }) => {
         class="badge"
         style={{
           position: "absolute",
-          top: "830px",
+          top: "790px",
           right: "100px",
           padding: "10px",
           backgroundColor: " #d6dbdf ",

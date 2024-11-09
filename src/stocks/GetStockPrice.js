@@ -36,7 +36,7 @@ export const GetStockPrice = ({ stockPrice }) => {
         width: "50rem",
         position: "absolute",
         top: "850px",
-        left: "100px",
+        left: "90px",
       }}>
       <div
         class="card"

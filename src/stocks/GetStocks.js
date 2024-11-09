@@ -48,7 +48,7 @@ export const GetStocks = ({ topStocks }) => {
     <div className="container">
       <div
         className="py-4"
-        style={{ position: "absolute", top: "470px", left: "100px" }}
+        style={{ position: "absolute", top: "430px", left: "100px" }}
       >
         <table
           className="table border shadow"
@@ -84,8 +84,8 @@ export const GetStocks = ({ topStocks }) => {
           </tbody>
         </table>
       </div>
-      {stockPrice && <SelectedTopStock stockPrice={stockPrice} />}
-      {stockPrice && <GetStockPrice stockPrice={stockPrice} />}
+      <div>{stockPrice && <SelectedTopStock stockPrice={stockPrice} />}</div>
+      <div>{stockPrice && <GetStockPrice stockPrice={stockPrice} />}</div> 
     </div>
   );
 };
